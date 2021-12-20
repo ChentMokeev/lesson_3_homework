@@ -7,7 +7,10 @@ void main() {
   print('Введите число');
   int a = int.parse(stdin.readLineSync()!);
 
-  if(a == 10) {
+}
+
+isEqualTo10 (int inp) {
+    if(inp == 10) {
     print(true);
   } else {
     print(false);

@@ -1,42 +1,100 @@
 import 'dart:io';
 
+List arr = [];
+
 void main() {
+  String lang = stdin.readLineSync()!;
 
-  String? lang = stdin.readLineSync();
+  daysWith2If(lang);
+  daysWithSwitch(lang);
+  daysWithArray(lang);
+}
 
-  List arr = [];
-
-  // Решение с двумя if
-  if (lang == 'ru') {
-    arr = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+// Решение с двумя if
+daysWith2If(String inp) {
+  if (inp == 'ru') {
+    arr = [
+      'Понедельник',
+      'Вторник',
+      'Среда',
+      'Четверг',
+      'Пятница',
+      'Суббота',
+      'Воскресенье'
+    ];
     print(arr);
   }
-
-  if (lang == 'en') {
-    arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  if (inp == 'en') {
+    arr = [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ];
     print(arr);
   }
+}
 
-  // Решение с switch-case
-  switch (lang) {
-    case 'ru': {
-      arr = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-      print(arr);
-    }
-    break;
+// Решение с switch-case
+daysWithSwitch(String inp) {
+  switch (inp) {
+    case 'ru':
+      {
+        arr = [
+          'Понедельник',
+          'Вторник',
+          'Среда',
+          'Четверг',
+          'Пятница',
+          'Суббота',
+          'Воскресенье'
+        ];
+        print(arr);
+      }
+      break;
 
-    case 'en': {
-      arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-      print(arr);
-    }
-    break;
+    case 'en':
+      {
+        arr = [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday'
+        ];
+        print(arr);
+      }
+      break;
   }
+}
 
-  // Решение с многомерным массивом
+// Решение с многомерным массивом
+daysWithArray(String inp) {
   arr = [
-    ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-    ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    [
+      'Понедельник',
+      'Вторник',
+      'Среда',
+      'Четверг',
+      'Пятница',
+      'Суббота',
+      'Воскресенье'
+    ],
+    [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ]
   ];
 
-  lang == 'ru' ? print(arr[0]) : print(arr[1]);
+  inp == 'ru' ? print(arr[0]) : print(arr[1]);
 }
